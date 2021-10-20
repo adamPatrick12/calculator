@@ -1,0 +1,52 @@
+.container{
+    background-color: black;
+    display: flex;
+    width: 20rem;
+    height: 35rem;
+    margin: auto;
+    margin-top: 8rem;
+    border-radius: 10%;
+    align-items: flex-end;
+}
+
+.btn,.btn1,.btn2,.btn3,.btn4,.btn5,.btn6,.btn7,.btn8,.btn9,.btnClear,.btnDeci,.btnEq,.btnPlus,.btnMinus,.btnMulti,.btnDiv{
+    margin-top: 1.5rem;
+    background-color: blanchedalmond;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: -0.2rem;
+    margin-left: 0.8rem;
+    font-size: 20pt;
+
+}
+
+.btn0{
+    margin-top: 1.5rem;
+    background-color: blanchedalmond;
+    width: 9rem;
+    height: 4rem;
+    border-radius: 10%;
+    margin-right: 0.3rem;
+    margin-left: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 20pt;
+}
+
+.display{
+background-color: blanchedalmond;
+width: 15rem;
+height: 4rem;
+border-radius: 5%;
+margin-left: 2.4rem;
+display: flex;
+flex-direction: row-reverse;
+
+
+}
+
+p{
+    color: blue;
+    font-size: 40pt;
+    margin: 0;
+}
