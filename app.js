@@ -16,133 +16,121 @@ plusBtn = document.querySelector(".btnPlus")
 minusBtn = document.querySelector(".btnMinus")
 multiBtn = document.querySelector(".btnMulti")
 divBtn = document.querySelector(".btnDiv")
+plusMinBtn = document.querySelector(".btnPlusMin")
 
-let valueStored = ""
+let valueStored = ""                //Variables to store number/operator inputs
 let symbol = ""
 let valueStoredArr = []
+let displayAnswer = ""
+let operatorClick = 0;
 
 num1Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "1"
-    output.prepend(numDisplay);
-    if(valueStored === ""){}
-    valueStored += "1"
+    clearAnswerScreen()
+    
+    printNumberElement("1")
 });
   
 num2Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "2"
-    output.prepend(numDisplay);
-    valueStored += "2"
+    clearAnswerScreen()
+    
+    printNumberElement("2")
 });
 
 num3Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "3"
-    output.prepend(numDisplay);
-    valueStored += "3"
+    clearAnswerScreen()
+    
+    printNumberElement("3")
 });
 
 num4Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "4"
-    output.prepend(numDisplay);
-    valueStored += "4"
-
+    clearAnswerScreen()
+    
+    printNumberElement("4")
+ 
 });
 
 num5Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "5"
-    output.prepend(numDisplay);
-    valueStored += "5"
+    clearAnswerScreen()
+    
+    printNumberElement("5")
 
 });
   
 num6Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "6"
-    output.prepend(numDisplay);
-    valueStored += "6"
+    clearAnswerScreen()
+    
+    printNumberElement("6")
 
 });
 
 num7Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "7"
-    output.prepend(numDisplay);
-    valueStored += "7"
+    clearAnswerScreen()
+    
+    printNumberElement("7")
 
 });
 
 num8Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "8"
-    output.prepend(numDisplay);
-    valueStored += "8"
+    clearAnswerScreen()
+    
+    printNumberElement("8")
 
 });
 
 num9Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "9"
-    output.prepend(numDisplay);
-    valueStored += "9"
+    clearAnswerScreen()
+    
+    printNumberElement("9")
 });
 
 num0Btn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "0"
-    output.prepend(numDisplay);
-    valueStored += "0"
+    clearAnswerScreen()
+    
+    printNumberElement("0")
 
 });
 
 deciBtn.addEventListener('click', function(){
 
-    numDisplay = document.createElement("p")
-    numDisplay.textContent = "."
-    output.prepend(numDisplay);
-    valueStored += "."
+    clearAnswerScreen()
+    
+    printNumberElement(".")
 
 });
 
 plusBtn.addEventListener('click', function(){
 
-    storeValue(valueStored)
+    printAnswer()
     symbol = "+"
-    valueStored = ""
+
 });
 
 minusBtn.addEventListener('click', function(){
 
-    storeValue(valueStored)
+    printAnswer()
     symbol = "-"
-    valueStored = ""
 });
 
 multiBtn.addEventListener('click', function(){
 
-    storeValue(valueStored)
+    printAnswer()
     symbol = "x"
-    valueStored = ""
 });
 
 divBtn.addEventListener('click', function(){
 
-    storeValue(valueStored)
+    printAnswer()
     symbol = "/"
-    valueStored = ""
 });
 
 clearBtn.addEventListener('click', function(){
@@ -150,29 +138,118 @@ clearBtn.addEventListener('click', function(){
     while (output.firstChild) {
         output.removeChild(output.firstChild);
         valueStored = ""
+        valueStoredArr = []
     }
+});
+
+plusMinBtn.addEventListener('click', function(){
+
+    clearAnswerScreen()
+    
+    printPlusMinus("-")
+
 });
 
 equalsBtn.addEventListener('click', function(){
 
-    storeValue(valueStored)
-    let result = operator(symbol,valueStoredArr[0],valueStoredArr[1])
-    valueStoredArr.splice(0,2, result)
-    console.log(valueStoredArr)
-    valueStored = ""
+    printAnswer()
 
 });
 
+printAnswer = function (){
 
+    operatorClick = 1
+    storeValue(valueStored)
+    valueStored = ""
+    
+    if(valueStoredArr[1] == null){
+    
+    }else{
+        
+        while (output.firstChild) {
+            
+            output.removeChild(output.firstChild);
+            operatorClick = 0; 
+        }
+        displayAnswer = answer()
+        answerDisplay = document.createElement("p")
+        answerDisplay.textContent = displayAnswer
+        output.prepend(answerDisplay);
+    }
+}
 
+printNumberElement = function (num){
+
+    if(operatorClick === 0){
+        numDisplay = document.createElement("p")
+        numDisplay.textContent = num
+        output.prepend(numDisplay);
+        valueStored += num
+    }else{
+        while (output.firstChild) {
+            output.removeChild(output.firstChild);
+            operatorClick = 0; 
+        }
+            numDisplay = document.createElement("p")
+            numDisplay.textContent = num
+            output.prepend(numDisplay);
+            valueStored += num
+    }
+}
+
+printPlusMinus = function (num){
+
+    
+        if(operatorClick === 0){
+            numDisplay = document.createElement("p")
+            numDisplay.textContent = num
+            output.append(numDisplay);
+            valueStored += num
+        }else{
+            while (output.firstChild) {
+                output.removeChild(output.firstChild);
+                operatorClick = 0; 
+            }
+                numDisplay = document.createElement("p")
+                numDisplay.textContent = num
+                output.append(numDisplay);                  //Append instead of prepend so negative symbol (-) can be placed in front.
+                valueStored += num
+        } 
+    }
+    
+clearAnswerScreen = function (){
+
+    if(valueStoredArr === displayAnswer)
+    
+    while (output.firstChild) {
+        
+        output.removeChild(output.firstChild);
+        operatorClick = 0; 
+        displayAnswer = ""
+    }
+}
+
+answer = function (){
+
+    let result = operator(symbol,valueStoredArr[0],valueStoredArr[1])
+    valueStoredArr.splice(0,2, result)
+    console.log(valueStoredArr)
+    
+    if(valueStoredArr[0].toString().length > 9){
+        valueStoredArr = []
+        valueStoredArr.push("Out of range")
+    }
+    return valueStoredArr
+
+}
 
 
 storeValue = function (value){
   
-    if(value === ""){
-       
+    if(value === ""){   
     }else{
-        intValueStored = parseInt(value);
+        intValueStored = parseFloat(value);
+        intValueStored = Math.round(intValueStored * 1000)/1000
         valueStoredArr.push(intValueStored)
         return valueStoredArr
     }
@@ -201,7 +278,7 @@ let sub = function(num1,num2){
 let multi = function(num1,num2){
     let multiply 
 
-    multiply = num1*num2;
+    multiply = (num1)*(num2);
     return multiply;
 
 }
@@ -210,6 +287,12 @@ let div = function(num1,num2){
     let division 
 
     division = num1/num2;
+    division = Math.round(division * 1000)/1000
+    
+    if(num2 === 0){
+        division = "Error"
+    }
+    
     return division;
 
 }

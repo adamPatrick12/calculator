@@ -1,5 +1,10 @@
+html{
+    background-color: #28FFBF
+
+}
+
 .container{
-    background-color: black;
+    background-color: #BCFFB9;
     display: flex;
     width: 20rem;
     height: 35rem;
@@ -7,46 +12,128 @@
     margin-top: 8rem;
     border-radius: 10%;
     align-items: flex-end;
+    box-shadow:-17px 10px 10px rgb(73, 73, 73); 
+    
+
 }
 
-.btn,.btn1,.btn2,.btn3,.btn4,.btn5,.btn6,.btn7,.btn8,.btn9,.btnClear,.btnDeci,.btnEq,.btnPlus,.btnMinus,.btnMulti,.btnDiv{
+.btn,.btn1,.btn2,.btn3,.btn4,.btn5,.btn6,.btn7,.btn8,.btn9,.btnDeci{
     margin-top: 1.5rem;
-    background-color: blanchedalmond;
+    background-color: #54eeb3;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
     margin-right: -0.2rem;
     margin-left: 0.8rem;
     font-size: 20pt;
+    font-family: 'Stylish', sans-serif;
 
+}
+
+.btn:hover,.btn1:hover,.btn2:hover,.btn3:hover,.btn4:hover,.btn5:hover,.btn6:hover,.btn7:hover,.btn8:hover,.btn9:hover,.btnDeci:hover{
+    margin-top: 1.5rem;
+    background-color: #61f5d0;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: -0.2rem;
+    margin-left: 0.8rem;
+    font-size: 20pt;
+    font-family: 'Stylish', sans-serif;
+
+}
+
+.btnEq,.btnPlus,.btnMinus,.btnMulti,.btnDiv,.btnPlusMin{
+    margin-top: 1.5rem;
+    background-color: #61df50;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: -0.2rem;
+    margin-left: 0.8rem;
+    font-size: 20pt;
+    font-family: 'Stylish', sans-serif;
+
+}
+
+.btnEq:hover,.btnPlus:hover,.btnMinus:hover,.btnMulti:hover,.btnDiv:hover,.btnPlusMin:hover{
+    margin-top: 1.5rem;
+    background-color: #9ddf94;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-right: -0.2rem;
+    margin-left: 0.8rem;
+    font-size: 20pt;
+    font-family: 'Stylish', sans-serif;
+
+}
+
+.btnClear{
+    margin-top: 1.5rem;
+    background-color:#61df50;
+    width: 9rem;
+    height: 4rem;
+    border-radius: 8%;
+    margin-right: -0.2rem;
+    margin-left: 0.8rem;
+    font-size: 20pt;
+}
+
+.btnClear:hover{
+    margin-top: 1.5rem;
+    background-color: rgb(243, 174, 168);
+    width: 9rem;
+    height: 4rem;
+    border-radius: 8%;
+    margin-right: -0.2rem;
+    margin-left: 0.8rem;
+    font-size: 20pt;
 }
 
 .btn0{
     margin-top: 1.5rem;
-    background-color: blanchedalmond;
+    background-color:  #54eeb3;
     width: 9rem;
     height: 4rem;
-    border-radius: 10%;
+    border-radius: 8%;
     margin-right: 0.3rem;
     margin-left: 0.5rem;
     margin-bottom: 2rem;
     font-size: 20pt;
+    font-family: 'Stylish', sans-serif;
+}
+
+.btn0:hover{
+    margin-top: 1.5rem;
+    background-color:  #61f5d0;
+    width: 9rem;
+    height: 4rem;
+    border-radius: 8%;
+    margin-right: 0.3rem;
+    margin-left: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 20pt;
+    font-family: 'Stylish', sans-serif;
 }
 
 .display{
-background-color: blanchedalmond;
+background-color: rgb(225, 236, 205);
+border: black solid 1px;;
 width: 15rem;
 height: 4rem;
 border-radius: 5%;
 margin-left: 2.4rem;
 display: flex;
 flex-direction: row-reverse;
-
-
+flex-wrap: wrap;
+overflow: hidden;
 }
 
 p{
-    color: blue;
-    font-size: 40pt;
+    color: black;
+    font-size: 30pt;
     margin: 0;
+    padding-top: 7px;
+    font-family: 'Stylish', sans-serif;
 }
